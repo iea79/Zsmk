@@ -1,0 +1,103 @@
+// Main wrappers =====================================
+.wrapper {
+	font-size: $main_font_size;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    background-color: $color_dark;
+    margin: 0 auto (-$footer_height) auto; // отрицательный нижний отступ на высоту футера
+    background-size: 100%;
+    background-repeat: no-repeat;
+	background-position: left top;
+}
+
+a {
+	color: $main_color;
+	text-decoration: none;
+	&:hover {
+		color: $color_success;
+	}
+}
+
+/* Middle
+ ----------------------------------------------------------------------------- */
+.main__content {
+	padding-bottom: $footer_height;
+	padding-top: 5.57em;
+	@extend %clear_a;
+	@media (max-width: 767px) {
+	    padding-top: 65px;
+	}
+}
+
+.container_center {
+	max-width: $container_width;
+	padding: 0 15px;
+	margin-left: auto;
+	margin-right: auto;
+	@extend %clear_a;
+}
+
+.column {
+	@include columns(4, 20px, 300px);
+}
+
+.txt {
+	&__center {
+		text-align: center;
+		a {
+			color: $color_success;
+			text-decoration: none;
+			&:hover {
+				color: $main_color;
+			}
+		}
+	}
+}
+
+/* Footer
+ ----------------------------------------------------------------------------- */
+.footer {
+	position: relative;
+	color: $color_primary;
+	height: $footer_height;
+	font-size: 0.8em;
+	letter-spacing: 0.01em;
+	@extend %clear_a;
+	a {
+		color: $color_primary;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.container_center {
+		padding-top: 1em;
+		padding-bottom: 10px;
+		max-width: 1296px;
+	}
+	&__left {
+		float: left;
+	}
+	&__right {
+		overflow: hidden;
+		text-align: right;
+		margin-right: 0.2em;
+		i {
+			margin-left: 0.5em;
+			vertical-align: middle;
+			font-size: 1.4em;
+		}
+	}
+	@media (max-width: 767px) {
+		color: $main_color;
+		&__left {
+			float: none;
+		}
+	    &__right {
+	    	display: none;
+	    }
+	}
+}
+
+

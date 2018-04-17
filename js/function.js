@@ -2,6 +2,7 @@ var TempApp = {
     lgWidth: 1200,
     mdWidth: 992,
     smWidth: 768,
+    resized: false,
     iOS: function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
     touchDevice: function() { return navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i); }
 };
@@ -58,34 +59,99 @@ $(document).ready(function() {
 	// });
 
 	// Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
-    // $(document).ready(function(){
-    //     var HeaderTop = $('#header').offset().top;
-        
-    //     $(window).scroll(function(){
-    //             if( $(window).scrollTop() > HeaderTop ) {
-    //                     $('#header').addClass('stiky');
-    //             } else {
-    //                     $('#header').removeClass('stiky');
-    //             }
-    //     });
-    // });
-   	// setGridMatch($('[data-grid-match] .grid__item'));
+    var HeaderTop = $('.header').offset().top;
+    
+    $(window).scroll(function(){
+            if( $(window).scrollTop() > HeaderTop ) {
+                    $('.header').addClass('stiky');
+            } else {
+                    $('.header').removeClass('stiky');
+            }
+    });
+
    	gridMatch();
+   	fontResize();
+
+   	var homeSlider = $('.homeSlider');
+   	var homeSliderCount = $('.homeSlider__item').length;
+	$('.homeSlider__count').html('1/' +homeSliderCount);
+
+   	homeSlider.slick({
+   		// arrows: false,
+   		prevArrow: $('.slick-prev'),
+   		nextArrow: $('.slick-next'),
+   	});
+
+   	homeSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+		// console.log(currentSlide +1);
+		$('.homeSlider__count').html((currentSlide + 1)+ '/' +homeSliderCount);
+	});
+
+	$('.mobile__toggle').on('click', function() {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			$('.mobile__nav_wrap').removeClass('open');
+			$('.mobile__backdoor').remove();
+		} else {
+			$(this).addClass('active');
+			$('.mobile__nav_wrap').addClass('open');
+			$('body').append('<div class="mobile__backdoor"></div>')
+		}
+	});
+
+	$('.sliderPrev').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.sliderThumbs'
+	});
+
+	$('.sliderThumbs').slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		asNavFor: '.sliderPrev',
+		dots: false,
+		arrows: true,
+		focusOnSelect: true,
+   		prevArrow: $('.slick-prev'),
+   		nextArrow: $('.slick-next'),
+	});
+	
+
 });
 
 $(window).resize(function(event) {
+    var windowWidth = $(window).width();
+    // Запрещаем выполнение скриптов при смене только высоты вьюпорта (фикс для скролла в IOS и Android >=v.5)
+    if (TempApp.resized == windowWidth) { return; }
+    TempApp.resized = windowWidth;
+
 	checkOnResize()
 });
 
 function checkOnResize() {
    	// setGridMatch($('[data-grid-match] .grid__item'));
    	gridMatch();
+   	fontResize();
 }
 
 function gridMatch() {
    	$('[data-grid-match] .grid__item').matchHeight({
    		byRow: true,
    	});
+}
+
+function fontResize() {
+    var windowWidth = $(window).width();
+    if (windowWidth < 1190 && windowWidth >= 768) {
+    	var fontSize = windowWidth/12; // font-size 100% 1920x1080
+    } else if (windowWidth < 768) {
+    	var fontSize = 80;
+    } else if (windowWidth >= 1190) {
+    	var fontSize = 100;
+    }
+	$('body').css('fontSize', fontSize + '%');
 }
 
 // function setGridMatch(columns) {
@@ -101,4 +167,7 @@ function gridMatch() {
 // 		columns.css('minHeight', tallestcolumn);
 // 	}, 100);
 // }
+
+
+
 

@@ -1,0 +1,88 @@
+extends template.jade
+block variables
+	- var bodyClass = "hardware";
+	- var pageBackround = "background-image: url(img/hardware-bg.jpg)";
+
+block title
+	title Home
+
+block content
+	.container_center
+		// begin breadcrumb 
+		ul.breadcrumb
+			li
+				a(href="#") Главная
+			li
+				a(href="#") Оборудование
+		// end breadcrumb 
+		
+	.container_center
+		.content__left
+			.content__title оборудование
+		.content__right
+			.hardware__item
+				.hardware__img
+					img(src="img/hardware.png", alt="")
+				.hardware__name gemini 254 pg
+				.hardware__sub Автоматическая портальная система с ЧПУ для сверления, фрезеровки и термической (в т.ч. плазменной) резки листового металла выполняет:
+				.hardware__list
+					.hardware__listItem Раскрой низкоуглеродистого металла толщиной до 80мм; 
+					.hardware__listItem Раскрой легированного металла толщиной до 64 мм; 
+					.hardware__listItem Сверление, зенкование, нарезание резьбы.
+				.hardware__infograph
+					a(href="#").hardware__infographItem
+						i.icon-prix
+					a(href="#").hardware__infographItem
+						i.icon-drill
+					a(href="#").hardware__infographItem
+						i.icon-borer
+					a(href="#").hardware__infographItem
+						i.icon-step
+					a(href="#").hardware__infographItem
+						i.icon-etc
+				a(href="product.html").hardware__more Подробнее
+					i.icon-arrow-right
+
+			.hardware__item
+				.hardware__img
+					img(src="img/hardware2.png", alt="")
+				.hardware__name 1001DFB Lacer
+				.hardware__sub Автоматическая комбинированная линия с ЧПУ для сверления и распиловки профилей выполняет:
+				.hardware__list
+					.hardware__listItem Распиловка двутавровой балки, швеллера, квадратной трубы, уголка. Возможна распиловка под углами 90, 60, 45 градусов; 
+					.hardware__listItem Сверление; 
+					.hardware__listItem Нарезание резьбы.
+				.hardware__infograph
+					a(href="#").hardware__infographItem
+						i.icon-prix-l
+					a(href="#").hardware__infographItem
+						i.icon-drill
+					a(href="#").hardware__infographItem
+						i.icon-borer
+					a(href="#").hardware__infographItem
+						i.icon-step
+					a(href="#").hardware__infographItem
+						i.icon-etc
+				a(href="product.html").hardware__more Подробнее
+					i.icon-arrow-right
+
+			.hardware__item
+				.hardware__img
+					img(src="img/hardware3.png", alt="")
+				.hardware__name Wheelabrator RB 1500G
+				.hardware__sub Дробеметная установка выполняет дробеочистку металла и металлоконструкций от ржавчины, окалины, лакокрасочных покрытий и грязи. Дробь размером до 0,8 мм вылетает из турбины со скоростью до 80 м/с, что позволяет получить высокую степень очистки поверхности металлопроката.  
+				.hardware__infograph
+					a(href="#").hardware__infographItem
+						i.icon-cleaner
+					a(href="#").hardware__infographItem
+						i.icon-etc
+				a(href="product.html").hardware__more Подробнее
+					i.icon-arrow-right
+	.container_center
+		.column 
+			p Изготовление металлических конструкций осуществляется автоматизированной линией по производству металлоконструкций итальянской фирмы FICEP, являющейся одним из лидеров в области станкостроения. 
+			p Данная линия в полностью автоматическом режиме производит дробеочистку, маркировку, сверление, фрезерование, зенкование, нанесение гравировки (скрайбинг), нарезание резьбы и распиловку металла. А также осуществляет резку кислородом и плазмой листового металлопроката.
+			p Современное оборудование и мощное программное обеспечение позволяют изготовить металлоконструкции с максимально эффективным раскроем металла, с минимальным участием человека и высокой точностью, что позволяет добиться уменьшения расходов, увеличить скорость производства. 
+			p Данное оборудование сконструировано и изготовлено в соответствии с нормами экологии и безопасности Евросоюза. 
+			p Наше производство оснащено современными автоматизированными линиями итальянского производителя  «FICEP» (Италия). 
+	

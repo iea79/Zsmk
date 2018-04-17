@@ -1,21 +1,51 @@
 // begin header 
 header.header
 	.container_center
+		
+		// begin header__left 
+		.header__left
 
-		a.logo
-			img(src="img/logo.png")
+			.mobile__nav
+				.mobile__toggle
+					//- i.material-icons menu
+				.mobile__nav_wrap
+					// begin navbar 
+					ul.navbar
+						li.navbar__item
+							a(href="#").navbar__link Продукция
+								i.icon-arrow-right.desktop-inline
+						li.navbar__item
+							a(href="hardware.html").navbar__link Оборудование
+								i.icon-arrow-right.desktop-inline
+						li.navbar__item
+							a(href="about.html").navbar__link О компании 
+						li.navbar__item.mobile
+							a(href="contact.html").navbar__link Контакты 
+					.mobile__logo
+						img(src="img/logo.svg", alt="")
 
-		// begin navbar 
 
-		ul.navbar
+			// end navbar 
+			
+		// end header__left 
 
-			li.navbar__item
-				a.navbar__link Item_1
-			li.navbar__item
-				a.navbar__link Item_2
-			li.navbar__item
-				a.navbar__link Item_3
+		// begin header__right 
+		.header__right
+			.header__action
+				a(href="contact.html").header__link.header__link_contact Контакты
+				a(href="#").header__link 
+					i.material-icons mail_outline
+					|Обратная связь
+				a(href="tel:+ 7 (915) 044–00–00").header__link 
+					i.material-icons call
+					|+ 7 (915) 044–00–00
 
-		// end navbar 
+		// end header__right 
+		// begin header__center 
+		.header__center
+			a(href="index.html").header__logo
+				img(src=menuLogo)
+			
+		// end header__center 
 
 // end header 

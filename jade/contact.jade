@@ -1,0 +1,40 @@
+extends template.jade
+block variables
+	- var bodyClass = "contact";
+	- var pageBackround = "";
+
+block title
+	title Home
+
+block content
+	.container_center
+		// begin breadcrumb 
+		ul.breadcrumb
+			li
+				a(href="#") Главная
+			li
+				a(href="#") Контакты
+		// end breadcrumb 
+		
+	.container_center
+		.content__left
+			.contact__wrap
+				a.contact__tel(href="tel:+ 7 (915) 044–00–00") + 7 (915) 044–00–00
+				.contact__address 194214 г. Санкт-Петербург, пр. Хошимина, д. 20 к. 2
+				a.contact__mail(href="mailto:") 
+					i.material-icons mail_outline
+					|info@zsmk.ru 
+		.content__right
+			form.form.contact__form
+				.form__legend Напишите нам сообщение
+				.form__row
+					input.form__field(type="text" placeholder="Имя*")
+				.form__row
+					input.form__field(type="text" placeholder="Email*")
+				.form__row
+					textarea.form__field(placeholder="Сообщение*")
+				.form__row
+					button.button ОТПРАВИТЬ
+
+	.map
+

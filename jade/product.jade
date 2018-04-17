@@ -1,0 +1,66 @@
+extends template.jade
+block variables
+	- var bodyClass = "product";
+	- var pageBackround = "background-image: url(img/product-bg.jpg)";
+
+block title
+	title Home
+
+block content
+	.container_center
+		// begin breadcrumb 
+		ul.breadcrumb
+			li
+				a(href="#") Главная
+			li
+				a(href="#") Оборудование
+			li
+				a(href="#") GEMINI 254 PG
+		// end breadcrumb 
+		
+	.container_center
+		.content__left
+			.sliderPrev
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+				.sliderPrev__item
+					img(src="img/product.jpg", alt="")
+			.sliderThumbs__wrap
+				.sliderThumbs
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+					.sliderThumbs__item
+						img(src="img/product-sm.jpg", alt="")
+				i.material-icons.slick-prev.slick-arrow arrow_back
+				i.material-icons.slick-next.slick-arrow arrow_forward
+
+		.content__right
+			.product__name gemini 254 pg
+			.product__sub Автоматическая портальная система с ЧПУ для сверления, фрезеровки и термической (в т.ч. плазменной) резки листового металла выполняет:
+			.hardware__list
+				.hardware__listItem  Width of the plate: 2540 mm
+				.hardware__listItem  Drilling head: 1
+				.hardware__listItem  Max. bore diameter: 40 (250) mm
+				.hardware__listItem  Thickness of the plate: 80 mm
+				.hardware__listItem  Head power: 15 kW
+				.hardware__listItem  Tools per spindle: 8 (24)
+				.hardware__listItem  Oxy-cutting torches (option): 3
+				.hardware__listItem  Plasma torches (option): 1
+				.hardware__listItem  Bevel plasma torches (option): 1
+				.hardware__listItem  Hypertherm Generator: HPR260 / 400XD

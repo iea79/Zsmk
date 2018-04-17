@@ -1,0 +1,41 @@
+// Breadcrumb ==================================================================
+.breadcrumb {
+	margin: 0 0.7em 0.4em;
+	padding: 0;
+	li {
+		display: inline-block;
+		vertical-align: baseline;
+		&:not(:first-child) {
+			&:before {
+				content: unicode($icon-chevron-right);
+				font-family: "zsmk";
+				display: inline-block;
+				font-size: 0.8em;
+				margin: 0 .3em;
+				vertical-align: middle;
+			}
+		}
+		&:last-child {
+			a {
+				cursor: default;
+				text-decoration: none;
+				color: $color_primary;
+				&:hover {
+					color: $color_primary;
+				}
+			}
+		}
+		
+		a {
+			font-size: 0.7em;
+			color: $main_color;
+			text-decoration: none;
+			&:hover {
+				color: $color_success;
+			}
+		}
+	}
+	@media (max-width: 767px) {
+	    display: none;
+	}
+}

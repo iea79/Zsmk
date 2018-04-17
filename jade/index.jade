@@ -1,6 +1,36 @@
 extends template.jade
+block variables
+	- var menuLogo = "img/logo-text.svg";
+	- var bodyClass = "home";
 
 block title
 	title Home
 
 block content
+	.container_center
+		// begin homeSlider 
+		.homeSlider__wrap
+			.homeSlider
+				.homeSlider__item
+					.homeSlider__title завод <br>строительных металло<wbr>конструкций
+					.homeSlider__sub Cовременное предприятие по производству металлоконструкций любого уровня сложности 
+					.homeSlider__action
+						a(href="#") Подробнее
+							i.icon-arrow-right
+				.homeSlider__item
+					.homeSlider__title завод <br>строительных металло<wbr>конструкций
+					.homeSlider__sub Cовременное предприятие по производству металлоконструкций любого уровня сложности 
+					.homeSlider__action
+						a(href="#") Подробнее
+							i.icon-arrow-right
+				.homeSlider__item
+					.homeSlider__title завод <br>строительных металло<wbr>конструкций
+					.homeSlider__sub Cовременное предприятие по производству металлоконструкций любого уровня сложности 
+					.homeSlider__action
+						a(href="#") Подробнее
+							i.icon-arrow-right
+			.homeSlider__control
+				i.material-icons.slick-arrow.slick-prev arrow_back
+				.homeSlider__count 
+				i.material-icons.slick-arrow.slick-next arrow_forward
+		// end homeSlider 

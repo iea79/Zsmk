@@ -1,0 +1,100 @@
+/* Header
+ ----------------------------------------------------------------------------- */
+$header_fz: 0.8em;
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1.7em 0 0.9em;
+	z-index: 20;
+	transition: all .5s;
+	@extend %clear_a;
+	&__left {
+		float: left;
+		margin-top: 1.15em;
+		margin-left: 0.7em;
+	}
+	&__right {
+		float: right;
+		margin-top: 1.15em;
+		margin-right: 0.7em;
+	}
+	&__action {
+		
+	}
+	&__link {
+		font-size: $header_fz;
+		color: $main_color;
+		font-weight: 700;
+		text-decoration: none;
+		margin-left: 4.1em;
+		transition: all .3s;
+		&:hover {
+			color: $color_success;
+		}
+		&_contact {
+			text-transform: uppercase;
+
+		}
+		i {
+			font-size: 1em;
+			vertical-align: bottom;
+			margin-right: 0.4em;
+			color: $color_info;
+		}
+	}
+	&__center {
+		display: block;
+		overflow: hidden;
+		text-align: center;
+	}
+	&__logo {
+		display: inline-block;
+		transition: all .3s;
+		width: 3.8em;
+		&:hover {
+			opacity: .8;
+		}
+	}
+	@media (max-width: 767px) {
+		padding: 15px 0;
+		&__left {
+			margin-left: 0;
+			margin-top: 3px;
+		}
+		&__right {
+			margin-right: 0;
+			margin-top: 5px;
+		}
+	    &__link {
+	    	font-size: 0;
+	    	margin-left: 19px;
+	    	i {
+	    		font-size: 17px;
+	    		margin-right: 0;
+	    		color: $main_color;
+	    	}
+	    	&_contact {
+	    		display: none;
+	    	}
+	    	
+	    }
+	    &__logo {
+	    	width: auto;
+	    	padding-left: 48px;
+	    	img {
+	    		width: 34px;
+
+	    	}
+	    }
+	}
+}
+
+// stiky menu
+.stiky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to bottom, #0c0c0c, #0c0c0c 60%, transparentize(#0c0c0c, 0.2) 80%, transparentize(#0c0c0c, .5) 90%, transparent 100%);
+}
