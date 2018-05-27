@@ -8,45 +8,31 @@ block title
 
 block content
 	.container_center
-		// begin breadcrumb 
+		// begin breadcrumb
+		- var breadLink = ["Главная", "Оборудование", "GEMINI 254 PG"]; 
 		ul.breadcrumb
-			li
-				a(href="#") Главная
-			li
-				a(href="#") Оборудование
-			li
-				a(href="#") GEMINI 254 PG
+			for name in breadLink
+				li
+					a(href="#")= name
+				
 		// end breadcrumb 
 		
 	.container_center
 		.content__left
 			.sliderPrev
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
-				.sliderPrev__item
-					img(src="img/product.jpg", alt="")
+				- var slide = 6;
+				- for (var countSlide = 0; countSlide < slide; countSlide++) {
+					.sliderPrev__item
+						img(src="img/product.jpg", alt="")
+				- }
+
 			.sliderThumbs__wrap
 				.sliderThumbs
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
-					.sliderThumbs__item
-						img(src="img/product-sm.jpg", alt="")
+					- var nav = 6;
+					- for (var countNav = 0; countNav < nav; countNav++) {
+						.sliderThumbs__item
+							img(src="img/product-sm.jpg", alt="")
+					- }
 				i.material-icons.slick-prev.slick-arrow arrow_back
 				i.material-icons.slick-next.slick-arrow arrow_forward
 
